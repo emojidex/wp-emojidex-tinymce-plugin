@@ -2,7 +2,7 @@
 /*
 Plugin Name: emojidex tinymce plugin
 Plugin URI: https://github.com/emojidex
-Description: emojidex plugin for tinymce
+Description: emojidex plugin for wordpress tinymce
 Version: 0.0.1
 Author: emojidex
 Author URI: https:www.emojidex.com
