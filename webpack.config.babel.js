@@ -45,5 +45,6 @@ module.exports = {
       },
       include: [/\.(js|php)$/]
     })
-  ]
+  ],
+  watch: true
 }

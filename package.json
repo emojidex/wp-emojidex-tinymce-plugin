@@ -13,10 +13,6 @@
   "author": "emojidex",
   "license": "ISC",
   "dependencies": {
-    "emojidex": "^0.17.2",
-    "jquery": "^3.3.1",
-    "lodash": "^4.17.4",
-    "tinymce": "^4.7.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
