@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        exclude: /node_modules/,
+        include: /node_modules\/emojidex-tinymce-plugin\/src\/img\/icon.png/,
         use: 'url-loader'
       }
     ]
