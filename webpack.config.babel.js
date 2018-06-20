@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        exclude: /node_modules/,
+        include: /node_modules\/emojidex-tinymce-plugin\/src\/img\/icon.png/,
         use: 'url-loader'
       }
     ]
@@ -31,9 +31,18 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.join('src', 'wp-emojidex-tinymce-plugin.php'),
-        to: path.join(__dirname, 'dist', pluginName)
-      }
-    ]),
+        to: path.join(__dirname, 'dist', pluginName),
+        force: true
+      },
+      // For Development --------
+      // {
+      //   from: path.join('dist', pluginName),
+      //   to: path.join('/my-wordpress-site/wp-content/plugins', pluginName),
+      //   force: true
+      // }
+    ], {
+      copyUnmodified: true
+    }),
     new ZipPlugin({
       path: path.join(__dirname, 'dist'),
       filename: pluginName + '.zip',

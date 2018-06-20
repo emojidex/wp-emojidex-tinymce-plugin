@@ -70,76 +70,56 @@
 "use strict";
 
 
-var _plugin = __webpack_require__(1);
+var _emojidexTinymcePlugin = __webpack_require__(1);
 
-var _plugin2 = _interopRequireDefault(_plugin);
+var _emojidexTinymcePlugin2 = _interopRequireDefault(_emojidexTinymcePlugin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// TODO: emojidex のアドレス
-$('head').append('<script src="https://cdn.rawgit.com/emojidex/emojidex-web/add_option/dist/js/emojidex.js"></script>');
+$('head').append('<script src="https://cdn.emojidex.com/scripts/javascript/emojidex.min.js"></script>');
 $('head').append('<link href="https://cdn.emojidex.com/scripts/css/emojidex.min.css" rel="stylesheet" />');
 
-// TODO: 将来的にはnpmから
-
-
-tinymce.PluginManager.add('emojidex', _plugin2.default);
+tinymce.PluginManager.add('emojidex', _emojidexTinymcePlugin2.default);
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_icon_png__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_icon_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__img_icon_png__);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _icon = __webpack_require__(2);
-
-var url = _interopRequireWildcard(_icon);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var checkPalette = function checkPalette(editor, e) {
+const checkPalette = (editor, e) => {
   if (typeof Palette != 'undefined') {
     $(e.target.$el).emojidexPalette({
-      onEmojiButonnClicked: function onEmojiButonnClicked(insertString) {
+      onEmojiButtonClicked: (insertString) => {
         editor.insertContent(insertString.imageTag);
       }
     });
   } else {
-    setTimeout(function () {
-      checkPalette(editor, e);
-    }, 1000);
+    setTimeout(() => { checkPalette(editor, e) }, 1000);
   }
-};
+}
 
-var plugin = function plugin(editor) {
-  editor.addButton('emojidex', {
-    tooltip: 'emojidex',
-    image: url.default,
-    onpostrender: function onpostrender(e) {
-      checkPalette(editor, e);
-    }
-  });
-  editor.on('init', function (e) {
-    tinymce.activeEditor.dom.loadCSS('https://cdn.emojidex.com/scripts/css/emojidex.min.css');
-  });
+class plugin {
+  constructor(editor) {
+    editor.addButton('emojidex', {
+      tooltip: 'emojidex',
+      image: __WEBPACK_IMPORTED_MODULE_0__img_icon_png___default.a,
+      onpostrender: (e) => {
+        checkPalette(editor, e);
+      }
+    });
+    editor.on('init', (e) => {
+      tinymce.activeEditor.dom.loadCSS('https://cdn.emojidex.com/scripts/css/emojidex.min.css');
+    });
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["default"] = plugin;
+;
 
-  return {
-    getMetadata: function getMetadata() {
-      return {
-        title: 'emojidex plugin for tinymce',
-        author: 'emojidex',
-        url: 'https://www.emojidex.com'
-      };
-    }
-  };
-};
-
-exports.default = plugin;
 
 /***/ }),
 /* 2 */
