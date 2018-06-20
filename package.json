@@ -11,9 +11,9 @@
     "url": "git@lab.phantom.industries:emojidex/wp-emojidex-tinymce-plugin.git"
   },
   "author": "emojidex",
-  "license": "ISC",
+  "license": "emojiOL",
   "dependencies": {
-    "emojidex-tinymce-plugin": "^0.0.2"
+    "emojidex-tinymce-plugin": ">=0.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

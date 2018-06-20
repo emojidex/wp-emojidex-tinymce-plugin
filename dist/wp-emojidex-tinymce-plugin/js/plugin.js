@@ -94,7 +94,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const checkPalette = (editor, e) => {
   if (typeof Palette != 'undefined') {
     $(e.target.$el).emojidexPalette({
-      onEmojiButonnClicked: (insertString) => {
+      onEmojiButtonClicked: (insertString) => {
         editor.insertContent(insertString.imageTag);
       }
     });
@@ -103,30 +103,22 @@ const checkPalette = (editor, e) => {
   }
 }
 
-const plugin = (editor) => {
-  editor.addButton('emojidex', {
-    tooltip: 'emojidex',
-    image: __WEBPACK_IMPORTED_MODULE_0__img_icon_png__["default"],
-    onpostrender: (e) => {
-      checkPalette(editor, e);
-    }
-  });
-  editor.on('init', (e) => {
-    tinymce.activeEditor.dom.loadCSS('https://cdn.emojidex.com/scripts/css/emojidex.min.css');
-  });
-
-  return {
-    getMetadata: () => {
-      return  {
-        title: 'emojidex plugin for tinymce',
-        author: 'emojidex',
-        url: 'https://www.emojidex.com'
-      };
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (plugin);
+class plugin {
+  constructor(editor) {
+    editor.addButton('emojidex', {
+      tooltip: 'emojidex',
+      image: __WEBPACK_IMPORTED_MODULE_0__img_icon_png___default.a,
+      onpostrender: (e) => {
+        checkPalette(editor, e);
+      }
+    });
+    editor.on('init', (e) => {
+      tinymce.activeEditor.dom.loadCSS('https://cdn.emojidex.com/scripts/css/emojidex.min.css');
+    });
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["default"] = plugin;
+;
 
 
 /***/ }),
