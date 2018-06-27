@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: emojidex tinymce plugin
-Plugin URI: https://github.com/emojidex
+Plugin Name: wp-emojidex-tinymce-plugin
+Plugin URI: https://github.com/emojidex/wp-emojidex-tinymce-plugin
 Description: emojidex plugin for wordpress tinymce
 Version: 0.0.1
 Author: emojidex
-Author URI: https:www.emojidex.com
-License: GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Author URI: https://www.emojidex.com
+License: emojiOL
+License URI: https://www.emojidex.com/emojidex/emojidex_open_license
 */
 
 if ( ! class_exists('Emojidex_Tinymce_Plugin') ) :
