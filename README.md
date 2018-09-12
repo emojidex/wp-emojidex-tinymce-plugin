@@ -1,9 +1,10 @@
-emojidex-tinymce-plugin
+wp-emojidex-tinymce-plugin
 =======================
 An emojidex plugin for wordpress tinymce which enables emojidex emoji selection, input,
-and display.
+and display. It adds an emojidex emoji palette chooser to the tinymce editor.
 
-
+This plugin is for WordPress. To use emojidex with tinymce use the 
+[emojidex-tinymce-plugin](https://github.com/emojidex/emojidex-tinymce-plugin).
 
 License
 =======
